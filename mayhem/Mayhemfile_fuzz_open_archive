@@ -1,0 +1,10 @@
+project: savantenvs/StormLib
+target: fuzz_open_archive
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_open_archive/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_open_archive
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_open_archive/fuzz_open_archive.dict
